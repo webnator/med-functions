@@ -5,18 +5,6 @@ $(document).ready(function () {
     console.log('bs-script loaded');
   });
 
-  ///////// CONFIG
-  var populateFields = {
-    A1_resident_name: [
-      'A2_resident_name',
-      'A3_resident_name',
-      'A4_resident_name',
-      'A5_resident_name'
-    ]
-  };
-
-  ///////// END CONFIG
-
   //// Legal modal functions
   // Sets the legal box checkbox to false by default
   $('#legal_box').prop('checked', false);
@@ -336,8 +324,6 @@ $(document).ready(function () {
       $('#' + target).show();
     }
   });
-
-  // A2 functions
 
 });
 
