@@ -33,7 +33,6 @@ $(document).ready(function () {
   $('.initials-section').each(function () {
     var section_id = $(this).data('id');
     var section_title = $(this).data('title') || '';
-    var section_parent = '#' + $(this).data('parent') || '';
     var section_required = $(this).data('required') ? ' validate[required]' : '';
     var section_body = $(this).html();
 
@@ -279,15 +278,17 @@ $(document).ready(function () {
   //// END Loader function
 
   //// Auto-populate function
-  for (var x = 0; x < Object.keys(populateFields).length; x++) {
-    var key = Object.keys(populateFields)[x];
-    $("[id='" + key + "']").on('change', function () {
-      var fields = populateFields[$(this).attr('id')];
-      for (var i = 0; i < fields.length; i++) {
-        var field = "[id='" + fields[i] + "']";
-        $(field).val($(this).val());
-      }
-    });
+  if (populateFields) {
+    for (var x = 0; x < Object.keys(populateFields).length; x++) {
+      var key = Object.keys(populateFields)[x];
+      $("[id='" + key + "']").on('change', function () {
+        var fields = populateFields[$(this).attr('id')];
+        for (var i = 0; i < fields.length; i++) {
+          var field = "[id='" + fields[i] + "']";
+          $(field).val($(this).val());
+        }
+      });
+    }
   }
   //// END Auto-populate function
 
