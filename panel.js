@@ -278,6 +278,7 @@ $(document).ready(function () {
   //// END Loader function
 
   //// Auto-populate function
+  var populateFields = populateFields || false;
   if (populateFields) {
     for (var x = 0; x < Object.keys(populateFields).length; x++) {
       var key = Object.keys(populateFields)[x];
