@@ -278,19 +278,15 @@ $(document).ready(function () {
   //// END Loader function
 
   //// Auto-populate function
-  var populateFields = populateFields || false;
-  console.log('Fields to be populated', populateFields);
-  if (populateFields) {
-    for (var x = 0; x < Object.keys(populateFields).length; x++) {
-      var key = Object.keys(populateFields)[x];
-      $("[id='" + key + "']").on('change', function () {
-        var fields = populateFields[$(this).attr('id')];
-        for (var i = 0; i < fields.length; i++) {
-          var field = "[id='" + fields[i] + "']";
-          $(field).val($(this).val());
-        }
-      });
-    }
+  for (var x = 0; x < Object.keys(populateFields).length; x++) {
+    var key = Object.keys(populateFields)[x];
+    $("[id='" + key + "']").on('change', function () {
+      var fields = populateFields[$(this).attr('id')];
+      for (var i = 0; i < fields.length; i++) {
+        var field = "[id='" + fields[i] + "']";
+        $(field).val($(this).val());
+      }
+    });
   }
   //// END Auto-populate function
 
