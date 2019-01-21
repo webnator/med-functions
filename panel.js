@@ -273,7 +273,7 @@ $(document).ready(function () {
 
   //// Loader function
   $('.load-screen').each(function () {
-    $(this).innerHTML('<div class="uil-ring-css"><div>&nbsp;</div></div>');
+    $(this).html('<div class="uil-ring-css"><div>&nbsp;</div></div>');
   });
   //// END Loader function
 
